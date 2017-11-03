@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 import net.mkengineering.studies.sds.DataResponse;
 
 @Component
-@ConditionalOnProperty(name="message", havingValue="REMOTE")
-public class MockRepositoryTEST implements SdsRepository{
+@ConditionalOnProperty(name="repository.location", havingValue="default")
+public class MockRepositoryDefault implements SdsRepository{
 
 	private final Map<String, Map<String, String>> vehicleMap = new HashMap<>();
 	
-	public MockRepositoryTEST() {
+	public MockRepositoryDefault() {
 		vehicleMap.put("OPEL", new HashMap<String, String>());
 		vehicleMap.put("NISSAN", new HashMap<String, String>());
 	}
@@ -36,6 +36,12 @@ public class MockRepositoryTEST implements SdsRepository{
 
 	@Override
 	public DataResponse getAttributeForVin(String vin, String attribute) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean evictCache() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import net.mkengineering.studies.sds.DataResponse;
 
 @Component
-@ConditionalOnProperty(name="message", havingValue="LOKAL")
+@ConditionalOnProperty(name="repository.location", havingValue="database")
 public class MockRepository implements SdsRepository{
 
 	private final Map<String, Map<String, String>> vehicleMap = new HashMap<>();
@@ -37,6 +37,12 @@ public class MockRepository implements SdsRepository{
 
 	@Override
 	public DataResponse getAttributeForVin(String vin, String attribute) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean evictCache() {
 		// TODO Auto-generated method stub
 		return null;
 	}

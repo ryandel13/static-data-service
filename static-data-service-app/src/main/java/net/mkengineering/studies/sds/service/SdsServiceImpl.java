@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.mkengineering.studies.sds.DataResponse;
-import net.mkengineering.studies.sds.bl.MockRepositoryFallback;
+import net.mkengineering.studies.sds.bl.MockRepositoryClientFallback;
 import net.mkengineering.studies.sds.bl.SdsRepository;
 
 @RestController
@@ -44,6 +44,11 @@ public class SdsServiceImpl implements SdsServiceInterface {
 	@Override
 	public ResponseEntity<String> echo() {
 		return new ResponseEntity<>(name, HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<Boolean> evictCache() {
+		return new ResponseEntity<>(sdsRepo.evictCache(), HttpStatus.OK);
 	}
 	
 

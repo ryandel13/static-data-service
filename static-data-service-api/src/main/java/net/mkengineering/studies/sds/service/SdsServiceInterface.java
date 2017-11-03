@@ -30,4 +30,7 @@ public final String CONTEXT = "vehicle";
 	@ResponseBody
 	public ResponseEntity<DataResponse> getAttributeForVin(@PathVariable("vin") String vin, @PathVariable("attribute") String attribute);
 
+	@RequestMapping(value = CONTEXT + "/", method = RequestMethod.DELETE)
+	@ResponseBody
+	public ResponseEntity<Boolean> evictCache();
 }

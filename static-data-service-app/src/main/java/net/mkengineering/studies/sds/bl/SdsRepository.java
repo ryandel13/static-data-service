@@ -12,4 +12,5 @@ public interface SdsRepository {
 
 	public DataResponse getAttributeForVin(String vin, String attribute);
 	
+	public Boolean evictCache();
 }
