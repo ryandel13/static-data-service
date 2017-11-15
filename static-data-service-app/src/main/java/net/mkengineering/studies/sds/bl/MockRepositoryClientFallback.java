@@ -1,5 +1,6 @@
 package net.mkengineering.studies.sds.bl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import net.mkengineering.studies.sds.DataResponse;
+import net.mkengineering.studies.sds.ResponseEntity;
 import net.mkengineering.studies.sds.remote.SdsRemoteFeign;
 
 @Component
@@ -27,7 +29,15 @@ public class MockRepositoryClientFallback implements SdsRepository {
 	@Override
 	@Cacheable("dataForVin")
 	public DataResponse getAllDataForVin(String vin) {
-		return feign.getAllDataForVin(vin).getBody();
+		DataResponse dR = feign.getAllDataForVin(vin).getBody();
+		List<ResponseEntity> list = dR.getValues();
+		List<ResponseEntity> inList = new ArrayList<>();
+		for(ResponseEntity rE : list) {
+			rE.setValue(rE.getValue() + "'");
+			inList.add(rE);
+		}
+		dR.setValues(inList);
+		return dR;
 	}
 
 	@Override

@@ -31,14 +31,12 @@ public class SdsServiceImpl implements SdsServiceInterface {
 
 	@Override
 	public ResponseEntity<DataResponse> getAllDataForVin(@PathVariable String vin) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ResponseEntity<DataResponse>(sdsRepo.getAllDataForVin(vin), HttpStatus.OK);
 	}
 
 	@Override
 	public ResponseEntity<DataResponse> getAttributeForVin(@PathVariable String vin, @PathVariable String attribute) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ResponseEntity<DataResponse>(sdsRepo.getAttributeForVin(vin, attribute), HttpStatus.OK);
 	}
 
 	@Override
