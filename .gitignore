@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/static-data-service-api/*.project
+/static-data-service-api/target
+/static-data-service-api/.settings
