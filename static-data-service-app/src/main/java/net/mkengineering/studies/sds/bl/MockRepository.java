@@ -50,6 +50,7 @@ public class MockRepository implements SdsRepository{
 	public DataResponse getAllDataForVin(String vin) {
 		Map<String, String> map = vehicleMap.get(vin);
 		DataResponse dR = new DataResponse();
+		dR.setValues(new ArrayList<ResponseEntity>());
 		for(String s : map.keySet()) {
 			ResponseEntity rE = new ResponseEntity(s, map.get(s), String.class.getName());
 			dR.addEntry(rE);
@@ -61,6 +62,7 @@ public class MockRepository implements SdsRepository{
 	public DataResponse getAttributeForVin(String vin, String attribute) {
 		Map<String, String> map = vehicleMap.get(vin);
 		DataResponse dR = new DataResponse();
+		dR.setValues(new ArrayList<ResponseEntity>());
 		for(String s : map.keySet()) {
 			if(s.equalsIgnoreCase(attribute)) {
 				ResponseEntity rE = new ResponseEntity(s, map.get(s), String.class.getName());
