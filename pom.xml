@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.mk-engineering.studies.sds</groupId>
 	<artifactId>static-data-service</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>static-data-service</name>
 
@@ -17,7 +17,7 @@
 	    <connection>scm:git:https://github.com/ryandel13/static-data-service</connection>
 	    <developerConnection>scm:git:https://github.com/ryandel13/static-data-service</developerConnection>
 	    <url>https://github.com/ryandel13/static-data-service</url>
-	  <tag>static-data-service-0.0.3</tag>
+	  <tag>HEAD</tag>
   </scm>
 	
 	<properties>
